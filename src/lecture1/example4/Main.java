@@ -6,20 +6,24 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static void solution1() {
-
+    private static void solution1(String[] wordAry) {
+        // StringBuilder 로 뒤집고 바로 출력하기.
+        for (String s : wordAry) {
+            String reversed = new StringBuilder(s).reverse().toString();
+            System.out.println(reversed);
+        }
     }
 
     private static void solution2(String[] str) {
         ArrayList<String> answer = new ArrayList<>();
 
-        for(String s: str) {
+        for (String s : str) {
             String tmp = new StringBuilder(s).reverse().toString();
             answer.add(tmp);
         }
 
         // 출력
-        for(String s: answer) {
+        for (String s : answer) {
             System.out.println(s);
         }
     }
@@ -27,10 +31,10 @@ public class Main {
     private static void solution3(int n, String[] str) {
         ArrayList<String> answer = new ArrayList<>();
         // n^2 시간 복잡도.
-        for(String x: str) {
+        for (String x : str) {
             char[] s = x.toCharArray();
-            int lt = 0, rt = x.length() -1;
-            while(lt < rt) {
+            int lt = 0, rt = x.length() - 1;
+            while (lt < rt) {
                 // 문자 변경
                 char tmp = s[lt];
                 s[lt] = s[rt];
@@ -44,7 +48,7 @@ public class Main {
         }
 
         // 출력
-        for(String s: answer) {
+        for (String s : answer) {
             System.out.println(s);
         }
     }
@@ -54,11 +58,13 @@ public class Main {
         // n개의 단어
         int nWord = in.nextInt();
 
+        // String[]에 저장.
         // String[]은 length.
         String[] wordAry = new String[nWord];
-        for(int i=0; i< wordAry.length; i++) {
+        for (int i = 0; i < wordAry.length; i++) {
             wordAry[i] = in.next();
         }
 
+        solution1(wordAry);
     }
 }
