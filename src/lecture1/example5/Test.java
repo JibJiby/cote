@@ -17,6 +17,7 @@ public class Test {
 
         System.out.println("\n===============");
 
+        // char[] --> String
         System.out.println(String.valueOf(ary));
         System.out.println(new String(ary));
     }
